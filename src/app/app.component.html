@@ -1,0 +1,93 @@
+<div class="container">
+
+  <div style="text-align:center;">
+    <h1>
+        {{ title }}!
+    </h1>
+    <div class="row">
+      <div class=".col-md-6"></div>
+  
+        <table class="table col-md-3">
+          
+             <table class="table table-striped">
+              <thead>
+                
+                <tr>
+                  <th>Name</th>
+                  <th>Admission number</th>
+                  <th>Student Photo</th>
+                  <th>Class Name</th>
+                  <th> Princiles remarks </th>
+                  <th> Class teachers remarks</th>
+                  <th>Exam name</th>
+                  <th>Grade</th>
+                  <th>Overrall Position</th>
+                  <th>Stream Position</th>
+      
+      
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of students">
+                <td>{{ student.student_name }}</td>
+                <td>{{ student.student_admission_number }}</td>
+      
+                <td>{{ student.student_PHOTO }}</td>
+                <td>{{ student.class_name }}</td>
+                <td>{{ student.principals_remarks }}</td>
+                <td>{{ student.class_teachers_remarks }}</td>
+      
+                <td>{{ student.exam_name }}</td>
+                <td>{{ student.mean_grade }}</td>
+                <td> {{ student.overall_position.position }} Out of {{student.overall_position.position_out_of}} </td>
+                <td> {{ student.stream_position.position }} Out of {{student.stream_position.position_out_of}} </td>
+      
+                
+              </tr>
+            </tbody>
+      
+             </table>
+               
+        </table><br><br>
+
+        <h1>Subjects results</h1>
+
+        <table ngif="students">
+          
+          <table class="table table-striped">
+           <thead>
+             
+             <tr>
+               <th>Name</th>
+               <th>Rank out of</th>
+               <th>Subject name</th>
+               <th>Grade</th>
+               <th> Comment </th>
+               <th> Rank</th>
+               
+             </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let student of students">
+             <td>{{ student.subject_results.name }}</td>
+             <td>{{ student.student_admission_number }}</td>
+   
+             <td>{{ student.student_PHOTO }}</td>
+             <td>{{ student.class_name }}</td>
+             <td>{{ student.principals_remarks }}</td>
+             <td>{{ student.class_teachers_remarks }}</td>
+   
+             
+             
+           </tr>
+         </tbody>
+   
+          </table>
+            
+     </table>
+  
+      </div>
+    </div>
+
+</div>
+
